@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Main page</title>
+        <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+    </head>
+    <body>
+        <h3> {{message}} </h3>
+
+        <p> Paragraph</p>
+
+        <p>Go to the  <a href="/lib">library</a> </p>
+        <p>or</p>
+        <p>Upload a book</p>
+
+        <form action="/upload_book" method="post"
+            enctype="multipart/form-data">
+            <input type="text" name="name">
+            <br>
+            <input type="file" name="book_file">
+            <br>
+            <button type="submit">Upload</button>
+        </form>
+
+        <form action="/show_plot" method="post" >
+            <input type="text" name="numbers">
+            <br>
+            <button type="submit">Plot</button>
+        </form>
+    </body>
+</html>

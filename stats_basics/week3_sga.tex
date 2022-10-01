@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}          
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{amsthm, amsmath, amssymb}
+\usepackage{mathtools}
+\usepackage{setspace}\onehalfspacing
+\usepackage[loose,nice]{units} %replace "nice" by "ugly" for units in upright fractions
+ 
+\title{Statistics Basics Week 3 SGA}
+\author{Yumen Cao}
+\date{June 27th 2022}
+ 
+\begin{document}
+\maketitle
+
+Let $X$ be the random variable that denotes the number of people who became happier after avoiding using social network for a week.
+
+Let $H_0$ be probability of becoming happier is $=\frac{1}{2}$
+
+Let $H_1$ be probability of becoming happier is  $>\frac{1}{2}$
+
+Since there is no clear information of the distribution of $X$, we are going to assume that 
+\[
+X \sim Binomial (n, p)
+\]
+where $n=20$ and $p=\frac{1}{2}$
+
+Then we can find the p-value:
+\[
+p(X\geq X_{obs}|H_0) = \\
+p(X=20|H_0) + p(X=19|H_0) + p(X=18|H_0) + p(X=17|H_0) + p(X=16|H_0)
+\]
+
+\begin{align}
+\begin{split}
+p(X\geq X_{obs}|H_0) = &\\
+&\binom{20}{20}(\frac{1}{2})^{20} (\frac{1}{2})^{0} + \\
+&\binom{20}{19}(\frac{1}{2})^{19} (\frac{1}{2})^{1} + \\
+&\binom{20}{18}(\frac{1}{2})^{18} (\frac{1}{2})^{2} + \\
+&\binom{20}{17}(\frac{1}{2})^{17} (\frac{1}{2})^{3} + \\
+&\binom{20}{16}(\frac{1}{2})^{16} (\frac{1}{2})^{4} \\
+= & 0.0059
+\end{split}
+\end{align}
+
+This means p-value < 0.05 and we can conclude that people are happier without social networks.
+
+\end{document}

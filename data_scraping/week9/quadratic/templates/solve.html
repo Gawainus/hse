@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Plot</title>
+        <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+    </head>
+    <body>
+        <h1 style="color:black">Quadratic function:</h1>
+        <h1>{{function_def}}</h1>
+
+        <img src="data:image/png;base64, {{image}}" alt="plot">
+    </body>
+</html>

@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}          
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{amsthm, amsmath, amssymb}
+\usepackage{mathtools}
+\usepackage{setspace}\onehalfspacing
+\usepackage[loose,nice]{units} %replace "nice" by "ugly" for units in upright fractions
+ 
+\title{Probability Theory Graded Assignment Week 2 Problem 1}
+\author{Yumen Cao}
+\date{April 2022}
+ 
+\begin{document}
+\maketitle
+
+Let $X$ be the random variable that denotes launches without insurance.
+
+If the launch succeeds, $X=100$ and $P(X)=0.9$, else, $X=-200$ and $P(X)=0.1$
+
+\begin{align}
+E(X) &= 0.9*100 + 0.1* (-200) \\
+&= 70
+\end{align}
+
+\begin{align}
+E(X^2) &= 0.9*100^2 + 0.1* (-200)^2 \\
+&= 13000
+\end{align}
+
+
+\begin{align}
+Var(X) &= E(X^2) - E^2(X) \\
+&= 13000 - 70^2 \\
+&= 8100
+\end{align}
+
+Let $Y$ be the random variable that denotes launches with insurance. Regardless the launch result, we pay for the insurance.
+
+If the launch succeeds, $=100 - 30 = 70$ and $P(Y)=0.9$, else, $=-200 + 200 -30 = -30$ and $P()=0.1$
+
+\begin{align}
+E(Y) &= 0.9*70 + 0.1* (-30) \\
+&= 60
+\end{align}
+
+\begin{align}
+E(Y^2) &= 0.9*70^2 + 0.1* (-30)^2 \\
+&= 4500
+\end{align}
+
+
+\begin{align}
+Var(Y) &= E(Y^2) - E^2(Y) \\
+&= 4500 -60^2 \\
+&= 900
+\end{align}
+
+
+To summarise, we have
+\begin{center}
+\begin{tabular}{||c| c |c||} 
+ \hline
+ Stats & $X$ & $Y$ \\ [0.5ex] 
+ \hline
+ \hline
+ $E$ & 70 & 60 \\
+ \hline
+ $Var$ & 8100 & 900 \\
+ \hline
+\end{tabular}
+\end{center}
+
+ 
+ This means that buying insurance lowers the expectation of profit and {\bf does not make sense in the long run}. But if the company just started, it would be devastating to suffer successive losses without insurance. The low variance provided by the insurance could make the company cashflow {\bf more stable}.
+
+\end{document}

@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}          
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{amsthm, amsmath, amssymb}
+\usepackage{mathtools}
+\usepackage{setspace}\onehalfspacing
+\usepackage[loose,nice]{units} %replace "nice" by "ugly" for units in upright fractions
+ 
+\title{Probability Theory Graded Assignment Week 2 Problem 1}
+\author{Yumen Cao}
+\date{April 2022}
+ 
+\begin{document}
+\maketitle
+
+First let's find the PMF of the random variable $X$
+\begin{center}
+\begin{tabular}{||c| c |c||} 
+ \hline
+ Case & $X$ & $P(X)$ \\ [0.5ex] 
+ \hline
+ \hline
+ Head and win & $100-10=90$ & $0.5*0.1 = 0.05$ \\
+ \hline
+  \hline
+ Head and lose & $-10$ & $0.5*0.9 = 0.45$\\
+ \hline
+ Tail and win \$50 &  $50-20=30$ & $0.5*0.1 = 0.05$ \\
+ \hline
+  \hline
+ Tail and win \$500 &  $500-20=480$ & $0.5*0.01 = 0.005$ \\
+ \hline
+  \hline
+ Tail and lose &  $-20$ & $0.5*0.89 = 0.445$ \\
+ \hline
+
+\end{tabular}
+\end{center}
+
+
+ \begin{align}
+ E(X) &= 0.5\times[ 0.1 \times 90 + 0.9 \times (-10)] + 0.5 \times [0.1 \times 30 + 0.01 \times 480 + 0.89 \times (-20)] \\
+         &= 0.5\times[9-9] + 0.5\times[3 + 4.8 -17.8] \\
+         &= -5
+ \end{align}
+
+We can see that $E(X)$ is the mean of the net payout of each lottery because the probability for each lottery is $0.5$. And the net payout of each lottery does not change this fact.
+
+
+Let $X_1$ denote the payout for the first lottery and $X_2$ for the second.\\\\
+Proof:
+ \begin{align}
+ E(X) &= 0.5 \times E(X_1) + 0.5 E(X_2) \\
+         &= \frac{E(X_1) + E(X_2)}{2}
+ \end{align}
+
+By definition, this is the mean.
+
+\end{document}
