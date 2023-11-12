@@ -1,0 +1,10 @@
+# syntax=docker/dockerfile:1
+
+FROM python
+
+WORKDIR /opt/demo/
+COPY /app .
+
+RUN pip install -r requirements.txt
+
+ENTRYPOINT python ruscola_server.py
